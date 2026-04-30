@@ -1,0 +1,429 @@
+/* =====================================================
+   Ms. Laura's 2nd Grade — style.css
+   Warm & cozy apple / school theme 🍎
+   ===================================================== */
+
+/* --- CSS Variables (easy to change colors here!) --- */
+:root {
+  --yellow:       #FFD166;
+  --yellow-light: #FFF3CC;
+  --orange:       #FF8C42;
+  --orange-dark:  #C85A00;
+  --red-apple:    #C0392B;
+  --cream:        #FFF8EE;
+  --brown:        #5C3317;
+  --green-found:  #27AE60;
+  --white:        #FFFFFF;
+  --shadow:       0 4px 18px rgba(160, 80, 0, 0.13);
+  --radius:       16px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', 'Trebuchet MS', cursive, sans-serif;
+  background-color: var(--cream);
+  color: var(--brown);
+  line-height: 1.6;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+header {
+  background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 100%);
+  padding: 2rem 1.5rem 0;
+  text-align: center;
+  border-bottom: 6px dashed var(--orange-dark);
+  box-shadow: var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.deco-icon {
+  font-size: 3.2rem;
+  filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.15));
+}
+
+.header-text h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: var(--brown);
+  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--orange-dark);
+  margin-top: 0.3rem;
+}
+
+/* --- Navigation --- */
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+  padding-bottom: 1.2rem;
+}
+
+nav a {
+  background: var(--white);
+  color: var(--orange-dark);
+  text-decoration: none;
+  padding: 0.5rem 1.3rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+nav a:hover {
+  background: var(--yellow);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* =====================================================
+   MAIN CONTENT
+   ===================================================== */
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+section h2 {
+  font-size: 1.9rem;
+  color: var(--orange-dark);
+  margin-bottom: 1.2rem;
+  padding-left: 1rem;
+  border-left: 7px solid var(--orange);
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--brown);
+  margin-bottom: 1.2rem;
+  background: var(--yellow-light);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.2rem;
+  border-left: 5px solid var(--yellow);
+}
+
+/* =====================================================
+   CARDS (Announcements & Worksheets)
+   ===================================================== */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.7rem;
+  margin-bottom: 1.1rem;
+  box-shadow: var(--shadow);
+  border-left: 6px solid var(--yellow);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: var(--brown);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: #6b4a2b;
+  font-size: 1rem;
+}
+
+.date {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.82rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+.iframe-hint {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* =====================================================
+   ACTIVITY CARD GRID
+   ===================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.3rem;
+}
+
+.activity-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  border-top: 6px solid var(--orange);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 26px rgba(160, 80, 0, 0.18);
+}
+
+.activity-card .icon {
+  font-size: 2.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.activity-card h3 {
+  color: var(--brown);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.activity-card p {
+  font-size: 0.95rem;
+  color: #7a5030;
+  margin-bottom: 1.1rem;
+}
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+.btn {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  padding: 0.55rem 1.5rem;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 3px 10px rgba(200, 90, 0, 0.25);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(200, 90, 0, 0.3);
+}
+
+/* =====================================================
+   WORD SEARCH SECTION
+   ===================================================== */
+.wordsearch-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* --- Word list panel --- */
+.words-panel {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  box-shadow: var(--shadow);
+  min-width: 170px;
+  border-top: 6px solid var(--red-apple);
+}
+
+.words-panel h3 {
+  color: var(--orange-dark);
+  font-size: 1.1rem;
+  margin-bottom: 0.9rem;
+}
+
+#word-list {
+  list-style: none;
+  padding: 0;
+}
+
+#word-list li {
+  padding: 0.3rem 0.2rem;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--brown);
+  letter-spacing: 1px;
+  transition: color 0.25s, text-decoration 0.25s;
+}
+
+#word-list li.found {
+  color: var(--green-found);
+  text-decoration: line-through;
+}
+
+.score-box {
+  margin-top: 1rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--yellow-light);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--orange-dark);
+  border: 2px solid var(--yellow);
+}
+
+/* --- Grid panel --- */
+.grid-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#ws-grid {
+  display: inline-grid;
+  gap: 3px;
+  background: var(--yellow-light);
+  border: 4px solid var(--orange);
+  border-radius: 14px;
+  padding: 10px;
+  user-select: none;
+}
+
+/* --- Individual cells --- */
+.ws-cell {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-radius: 7px;
+  cursor: pointer;
+  background: var(--white);
+  color: var(--brown);
+  border: 2px solid transparent;
+  transition: background 0.15s, transform 0.1s, border-color 0.15s;
+}
+
+.ws-cell:hover {
+  background: var(--yellow);
+  transform: scale(1.08);
+}
+
+.ws-cell.start {
+  background: var(--orange);
+  color: var(--white);
+  border-color: var(--orange-dark);
+  transform: scale(1.1);
+}
+
+.ws-cell.found {
+  background: #A9DFBF;
+  color: #1a5c36;
+  border-color: var(--green-found);
+  cursor: default;
+}
+
+.ws-cell.found:hover {
+  transform: none;
+  background: #A9DFBF;
+}
+
+/* --- Controls below grid --- */
+.ws-controls {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#ws-status {
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--orange-dark);
+}
+
+/* =====================================================
+   IFRAME (Google Docs / Slides embed)
+   ===================================================== */
+iframe {
+  display: block;
+  border-radius: 12px;
+  border: 3px solid var(--yellow) !important;
+  margin-top: 0.8rem;
+  width: 100%;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+footer {
+  text-align: center;
+  padding: 1.6rem 1rem;
+  background: linear-gradient(135deg, var(--orange) 0%, var(--yellow) 100%);
+  color: var(--brown);
+  font-size: 1.05rem;
+  font-weight: bold;
+  border-top: 6px dashed var(--orange-dark);
+  letter-spacing: 0.5px;
+}
+
+/* =====================================================
+   RESPONSIVE — Mobile friendly
+   ===================================================== */
+@media (max-width: 620px) {
+  .header-content {
+    gap: 0.8rem;
+  }
+
+  .deco-icon {
+    font-size: 2.2rem;
+  }
+
+  .ws-cell {
+    width: 27px;
+    height: 27px;
+    font-size: 0.85rem;
+  }
+
+  .wordsearch-container {
+    flex-direction: column;
+  }
+
+  .grid-panel {
+    align-items: center;
+    width: 100%;
+  }
+
+  #ws-grid {
+    gap: 2px;
+    padding: 7px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
